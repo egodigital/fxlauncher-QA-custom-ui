@@ -1,0 +1,95 @@
+
+.root {
+    /* scale */
+    -fx-font-size: 18px;
+
+    /* changed the accent color to the official e.go blue */
+    -fx-accent: #009FE3;
+    -fx-focus-color: #009FE3;
+}
+
+
+.toggle-button{
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+}
+
+/* set the font size from the table column header*/
+.table-view .column-header, .table-view .filler {
+    -fx-font-size: 12px;
+}
+
+/* remove the default border from the split pane */
+.split-pane {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+/* switched the design of the titled pane title */
+.titled-pane > .title {
+   /* -fx-background-color: -fx-box-border, -fx-inner-border, -fx-body-color;*/
+   -fx-background-color: -fx-box-border, transparent, -fx-base;
+}
+.titled-pane:focused > .title{
+    -fx-background-color: -fx-box-border, transparent, -fx-base;
+}
+
+/*remove the background of the process-indicator*/
+.progress-indicator .indicator {
+    -fx-background-color: transparent ;
+}
+
+/* overrides the padding from all the titled pane children*/
+.titled-pane > .content > * {
+    -fx-padding: 5px;
+}
+
+#zero-padding > .content > *{
+    -fx-padding: 0px;
+}
+
+#minimal-boarder > .track {
+
+    -fx-background-color:
+              -fx-shadow-highlight-color,
+              linear-gradient(to bottom, derive(-fx-text-box-border, -10%), -fx-text-box-border),
+              white;
+    -fx-background-insets: 0, 0 0 1 0, 1 1 2 1;
+    -fx-background-radius: 4, 3, 2; /* 10, 9, 8 */
+}
+
+#minimal-boarder > .bar {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-background-radius: 4, 3, 2; /* 10, 9, 8 */
+}
+
+#progress-bar-no-boarder > .bar {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-background-radius: 0;
+}
+
+#progress-bar-no-boarder > .track {
+    -fx-background-color: transparent;
+    -fx-background-insets:  0;
+}
+
+
+
+/*
+    styles a node like a label(transparent focus, transparent boarder and no content padding)
+    This is useful to display selectable text. Just use a TextArea with this class
+*/
+#like-a-label{
+    -fx-text-box-border: transparent;
+    -fx-control-inner-background: transparent ;
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-text-inner-color: black;
+}
+#like-a-label .content{
+    -fx-padding: 0px;
+}
+
+
