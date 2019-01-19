@@ -34,8 +34,8 @@ public class FXLauncherCustomUI implements UIProvider {
 
     @Override
     public Parent createLoader() {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/fxlauncher_splashScreen.fxml"));
-        bundle = ResourceBundle.getBundle("fxlauncher_stringResource", Locale.getDefault(), getClass().getClassLoader());
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/res/fxml/fxlauncher_splashScreen.fxml"));
+        bundle = ResourceBundle.getBundle("res/fxlauncher_stringResource", Locale.getDefault(), getClass().getClassLoader());
         loader.setResources(bundle);
 
         Parent root;
@@ -48,7 +48,7 @@ public class FXLauncherCustomUI implements UIProvider {
             label_text = (Label) root.lookup("#label_text");
 
             stage.setTitle(bundle.getString("general_applicationName"));
-            stage.getIcons().addAll(new Image(getClass().getResourceAsStream("/FXLauncher_QA-App-logo.png")));
+            stage.getIcons().addAll(new Image(getClass().getResourceAsStream("/res/FXLauncher_QA-App-logo.png")));
             stage.initStyle(StageStyle.TRANSPARENT);
             stage.getScene().setFill(Color.WHITE);
             label_text.setText(bundle.getString("splash_checkingForUpdate"));
